@@ -1,12 +1,5 @@
 function isSameDay(date1, date2) {
-
-    const firstDate = getDayMonthYear(date1);
-    const secondDate = getDayMonthYear(date2);
-
-    if (JSON.stringify(firstDate) === JSON.stringify(secondDate)) {
-        return true;
-    } else return false;
-
+    
     function getDayMonthYear (date) {
         return {
             day: date.getDate(),
@@ -14,4 +7,14 @@ function isSameDay(date1, date2) {
             year: date.getFullYear()
         }
     }
+
+    function compareDates (date1, date2) {
+        return JSON.stringify(date1) === JSON.stringify(date2);
+    }
+
+    const firstDate = getDayMonthYear(date1);
+    const secondDate = getDayMonthYear(date2);
+
+    return compareDates(firstDate, secondDate);
+
 }
